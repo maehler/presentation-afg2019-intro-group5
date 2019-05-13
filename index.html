@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>reveal.js</title>
+        <title>AFG2019 &ndash; Group 5</title>
 
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/maehler_dark.css">
@@ -35,10 +35,59 @@
         <div class="reveal">
             <div class="slides">
                 <section>
-                    <h1>Slide 1</h1>
+                    <h1>Machine learning of leaf shape GWAS</h1>
+                    <p><small>A functional genomics project</small></p>
                 </section>
+
                 <section>
-                    <h1>Slide 2</h1>
+                    <h1>Leaf shape in aspen</h1>
+                    <div style="display: flex; align-items: center;">
+                        <ul>
+                            <li>Large natural variation</li>
+                            <li>Highly heritable</li>
+                            <li>Complex trait</li>
+                        </ul>
+                        <img style="width: 50%; height: 50%; margin: 0 auto;" src="img/aspen_leaves.jpg" alt="Variation among aspen leaves">
+                    </div>
+                </section>
+
+                <section>
+                    <h1>Traditional GWAS</h1>
+                    <p>We have tried doing traditional GWAS, but we have too few samples given the complexity of the trait. Also, we have only done univariate GWAS, that is, only considered one SNP at a time.</p>
+                </section>
+
+                <section>
+                    <h1>Why machine learning?</h1>
+                    <p>Can we find combinations of SNPs that explain the trait variation better than single SNPs?</p>
+                    <p>Also, could it be possible to integrate other types of data, for example gene expression, to better describe the phenotypic variation?</p>
+                </section>
+
+                <section>
+                    <h2>Data</h2>
+                    <ul>
+                        <li>Gene expression: ~35,000 genes, 80 genotypes (<code>htseq-count</code>)</li>
+                        <li>Genetic variation: ~4 million SNPs (VCF format)</li>
+                        <li>
+                            Phenotype data: leaf shape (BLUPs)
+                            <ul>
+                                <li>Area</li>
+                                <li>Indent depth</li>
+                                <li>Circularity</li>
+                            </ul>
+                        </li>
+                        <li>Gene annotations (gff3 format)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Software</h2>
+                    <ul>
+                        <li>bcftools (working with VCF files; command line)</li>
+                        <li>bedtools (genome arithmetic; command line)</li>
+                        <li>plink (file formats SNPs; command line)</li>
+                        <li>ranger (random forests; command line/R-package)</li>
+                        <li>Downstream analysis in R or Python (or any other language you like)</li>
+                    </ul>
                 </section>
             </div>
         </div>
